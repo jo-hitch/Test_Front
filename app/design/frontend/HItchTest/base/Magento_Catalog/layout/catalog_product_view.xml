@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="product.info.main">
+            <container name="product-wrapper-test" htmlClass="product-wrap-test" htmlTag="div" before="-">
+                <container name="product.wrapper.test.row" htmlClass="product-wrap-test-row" htmlTag="div">
+                    <container name="product.wrapper.test.left" htmlClass="product-wrap-test-left" htmlTag="div">
+                        <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image.test" template="Magento_Catalog::product/view/gallerytest.phtml"/>
+                        <block class="Magento\Theme\Block\Html\Title" name="test.title" template="Magento_Theme::html/title.phtml"/>
+                        <container name="product.info.price2" htmlTag="div" htmlClass="product-info-main-test">
+                            <block class="Magento\Catalog\Pricing\Render" name="product.price.final_2" >
+                                <arguments>
+                                    <argument name="price_render" xsi:type="string">product.price.render.default</argument>
+                                    <argument name="price_type_code" xsi:type="string">final_price</argument>
+                                    <argument name="zone" xsi:type="string">item_view</argument>
+                                </arguments>
+                            </block>
+                            <block class="Magento\Catalog\Block\Product\View" name="product.info.test" template="Magento_Catalog::product/view/form.phtml">
+                                <container name="product.info.form.content.test" as="product_info_form_content">
+                                    <block class="Magento\Catalog\Block\Product\View" name="product.info.addtocart.test" as="addtocart" template="Magento_Catalog::product/view/addtocart.phtml"/>
+                                </container>
+                            </block>
+                        </container>
+
+
+                    </container>
+                    <container name="product.wrapper.test.right" htmlClass="product-wrap-test-right" htmlTag="div">
+                        <block class="Magento\Cms\Block\Block" name="scroll_banner">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">scroll_banner</argument>
+                            </arguments>
+                        </block>
+                    </container>
+
+                </container>
+            </container>
+        </referenceContainer>
+
+    </body>
+</page>

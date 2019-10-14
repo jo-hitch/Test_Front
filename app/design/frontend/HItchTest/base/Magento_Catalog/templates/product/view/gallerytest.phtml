@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+?>
+
+<?php foreach($block->getGalleryImages() as $image): ?>
+    <?php if($block->isMainImage($image)):?>
+        <div class="product-wrap-image"><img src="<?php echo $image->getData('small_image_url') ?>"></div>
+    <?php endif; ?>
+<?php endforeach; ?>

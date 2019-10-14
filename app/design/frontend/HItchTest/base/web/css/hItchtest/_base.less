@@ -1,0 +1,117 @@
+//
+//  Base theme styles
+//
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+  body {
+
+  }
+  a {
+    transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+  }
+  //
+  //  Additional reset
+  //  _____________________________________________
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  //  Page Heading
+
+  .page-title {
+    margin-bottom: 30px;
+  }
+
+  //
+  //  Page section containers
+  //  _____________________________________________
+
+  body,
+  .page-wrapper,
+  .header-container,
+  .main-container,
+  .footer-container{
+    background-color: transparent;
+    background-repeat: repeat;
+    background-position: center top;
+    background-attachment: scroll;
+  }
+
+  //
+  //  Clearfix
+  //  _____________________________________________
+
+  .inner-container {
+    &:extend(.abs-add-clearfix all);
+  }
+
+  //  Clearfix for selected classes for backward compatibility
+
+  .clearfix,
+  .clearer, // Deprecated
+  .section-line,
+  .section-title,
+  .block-related-thumbnails .product,
+  .products-grid,
+    //.products-list li.item,
+  .product-view .box-description {
+    &:extend(.abs-add-clearfix all);
+  }
+
+  //
+  //  Blocks
+  //  _____________________________________________
+
+  //  Block title and section heading
+
+  .sidebar .block .block-title,
+  .product-slider .block-title,
+  .block.related .block-title,
+  .block.upsell .block-title,
+  .block.crosssell .block-title,
+  .section-title {
+    &:extend(.abs-sidebar-block-title all);
+  }
+
+  .block {
+    .block-title {
+      strong {
+        & + span,
+        & + div {
+          margin-left: 5px;
+          .rtl & {
+            margin-left: 0;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  //
+  //  sticky-menu-init
+  //  _____________________________________________
+  .nav-sections.isStuck {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15)
+  }
+
+}
+// end: media-common
